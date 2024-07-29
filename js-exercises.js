@@ -20,9 +20,16 @@ do {
 
     let movementSelector = arr[randomMovement]; 
 
+    //ensure each workout is unique and show how may movements have been added. 
+    if (!Object.values(newWorkout).includes(movementSelector)) {
+        newWorkout[movementOrder[movements]] = movementSelector; 
+        movements++; 
+    }
+
 
 } while (movements < 4);
-return newWorkouts;
+
+return newWorkout;
 }
 
 console.log(exerciseGenerator(exerciseLibrary));
